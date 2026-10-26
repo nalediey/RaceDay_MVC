@@ -1,0 +1,12 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace RaceDay_MVC.Controllers
+{
+    public class ParticipantController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+    }
+}

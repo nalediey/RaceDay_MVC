@@ -23,12 +23,12 @@ namespace RaceDay_MVC.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult AboutUs()
         {
             return View();
         }   
 
-        public IActionResult Contact()
+        public IActionResult ContactUs()
         {
             return View();
         }
@@ -42,6 +42,21 @@ namespace RaceDay_MVC.Controllers
         {
             return View();
         }
+
+        public IActionResult Events()
+        {
+            return View();
+        }
+
+        public IActionResult Calendar()
+        {
+            return View();
+        }
+        public IActionResult Results()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

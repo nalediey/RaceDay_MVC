@@ -1,18 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "RaceDay";
 }
-<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-<!--Adding the navigation-->
-<!--The Action method has two arguements the first arguement is for the view, the second arguement is for the controller-->
-<nav class="navigation"> 
-    <a href="@Url.Action("index","Home")">Home</a>
-    <a href="@Url.Action("About","Home")">About Us</a>
-    <a href="@Url.Action("Contact","Home")">Contact Us</a>
-    <a href="@Url.Action("Login","Home")">Login</a>
-    <a href="@Url.Action("Register","Home")">Register</a>
-    <a href="@Url.Action("Organiser","User")">Organiser</a>
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<nav class="navigation">
+
+    <a href="@Url.Action("Index", "Home")" class="logo">
+        <i class="fa-solid fa-flag-checkered"></i>
+        RaceDay
+    </a>
+
+    <div class="nav-links">
+        <a href="@Url.Action("Index", "Home")">Home</a>
+        <a href="@Url.Action("AboutUs", "Home")">About Us</a>
+        <a href="@Url.Action("Events", "Home")">Events</a>
+        <a href="@Url.Action("Calendar", "Home")">Race Calendar</a>
+        <a href="@Url.Action("Results", "Home")">Results</a>
+        <a href="@Url.Action("ContactUs", "Home")">Contact Us</a>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="@Url.Action("Login", "Home")" class="login-btn">Login</a>
+        <a href="@Url.Action("Register", "Home")" class="register-btn">Register</a>
+    </div>
 
 </nav>

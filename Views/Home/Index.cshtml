@@ -1,13 +1,128 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
 @Html.Partial("_navigation")
 
 <section class="home-content">
 
+    <!-- Welcome Section -->
+    <div class="hero-section">
 
+        <div class="hero-text">
+            <p class="hero-subtitle">WELCOME TO RACEDAY</p>
 
+            <h1>
+                Every Race Has a Story.
+                <span>Make Yours Count.</span>
+            </h1>
+
+            <p class="hero-description">
+                Discover exciting road running, walking and cycling events
+                across South Africa. Register for your next challenge,
+                connect with the sporting community and make every finish count.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="@Url.Action("Events", "Home")" class="primary-btn">
+                    Explore Events
+                </a>
+
+                <a href="@Url.Action("About", "Home")" class="secondary-btn">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="~/images/race-home.png" alt="Athletes participating in a road race" />
+        </div>
+
+    </div>
+
+    <!-- About RaceDay Section -->
+    <div class="intro-section">
+
+        <p class="section-label">ABOUT RACEDAY</p>
+
+        <h2>Bringing South Africa's Sporting Community Together</h2>
+
+        <p>
+            South Africa has a vibrant road events culture, with thousands
+            of people participating in running, walking and cycling events
+            every year. RaceDay provides a convenient platform that brings
+            participants and event organisers together in one place.
+        </p>
+
+        <p>
+            From discovering upcoming races to managing event registrations,
+            RaceDay makes the event experience easier, more organised and
+            more accessible.
+        </p>
+
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+
+        <p class="section-label">WHAT WE OFFER</p>
+
+        <h2>Everything You Need for Race Day</h2>
+
+        <div class="features-container">
+
+            <div class="feature-card">
+                <h3>Discover Events</h3>
+                <p>
+                    Explore upcoming road running, walking and cycling
+                    events happening across South Africa.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Easy Registration</h3>
+                <p>
+                    Browse available events and register for your
+                    favourite sporting challenges.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Track Your Progress</h3>
+                <p>
+                    Keep track of your event participation and
+                    personal race performance history.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Manage Events</h3>
+                <p>
+                    Event organisers can manage events, categories,
+                    participant enrolments and results.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section">
+
+        <h2>Ready for Your Next Challenge?</h2>
+
+        <p>
+            Join the RaceDay community and start discovering
+            sporting events across South Africa.
+        </p>
+
+        <a href="@Url.Action("Register", "Home")" class="primary-btn">
+            Get Started
+        </a>
+
+    </div>
 
 </section>

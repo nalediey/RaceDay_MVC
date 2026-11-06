@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Events";
+}
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+@Html.Partial("_navigation")
+
+<section class="events-page">
+
+    <div class="events-hero">
+        <p class="section-label">FIND YOUR NEXT CHALLENGE</p>
+        <h1>Explore <span>Upcoming Events</span></h1>
+        <p>
+            Discover exciting running, walking and cycling events
+            happening across South Africa. Choose your next challenge
+            and get ready for race day.
+        </p>
+    </div>
+
+    <div class="events-intro">
+        <h2>Upcoming Sporting Events</h2>
+        <p>Explore some of the sporting events you can take part in.</p>
+    </div>
+
+    <div class="events-container">
+
+        <div class="event-card">
+            <div class="event-image">
+                <img src="~/images/comrades.jpg"
+                     alt="Comrades Marathon runners" />
+            </div>
+            <div class="event-details">
+                <span class="event-category running">Road Running</span>
+                <h3>Comrades Marathon</h3>
+                <p class="event-location">Pietermaritzburg to Durban, KwaZulu-Natal</p>
+                <p>
+                    Take on one of South Africa's most famous
+                    long-distance running challenges.
+                </p>
+                <div class="event-info">
+                    <span>Distance: 90 km</span>
+                    <span>Type: Marathon</span>
+                </div>
+                <a href="@Url.Action("Register", "Home")" class="event-btn">
+                    Register Now
+                </a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-image">
+                <img src="~/images/capetown-cycle.jpg"
+                     alt="Cyclists participating in a cycling race" />
+            </div>
+            <div class="event-details">
+                <span class="event-category cycling">Cycling</span>
+                <h3>Cape Town Cycle Tour</h3>
+                <p class="event-location">Cape Town, Western Cape</p>
+                <p>
+                    Experience an exciting cycling event through
+                    the beautiful scenery of Cape Town.
+                </p>
+                <div class="event-info">
+                    <span>Distance: 109 km</span>
+                    <span>Type: Road Cycling</span>
+                </div>
+                <a href="@Url.Action("Register", "Home")" class="event-btn">
+                    Register Now
+                </a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-image">
+                <img src="~/images/soweto-marathon.jpg"
+                     alt="Runners participating in a marathon" />
+            </div>
+            <div class="event-details">
+                <span class="event-category running">Road Running</span>
+                <h3>Soweto Marathon</h3>
+                <p class="event-location">Soweto, Gauteng</p>
+                <p>
+                    Celebrate community and sporting spirit
+                    while running through the streets of Soweto.
+                </p>
+                <div class="event-info">
+                    <span>Distance: 42.2 km</span>
+                    <span>Type: Marathon</span>
+                </div>
+                <a href="@Url.Action("Register", "Home")" class="event-btn">
+                    Register Now
+                </a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-image">
+                <img src="~/images/community-walk.jpg"
+                     alt="People taking part in a community walk" />
+            </div>
+            <div class="event-details">
+                <span class="event-category walking">Walking</span>
+                <h3>Community Charity Walk</h3>
+                <p class="event-location">Johannesburg, Gauteng</p>
+                <p>
+                    Join a community walking event that promotes
+                    fitness, wellness and making a difference.
+                </p>
+                <div class="event-info">
+                    <span>Distance: 5 km</span>
+                    <span>Type: Community Walk</span>
+                </div>
+                <a href="@Url.Action("Register", "Home")" class="event-btn">
+                    Register Now
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="events-bottom">
+        <h2>Ready to Take Part?</h2>
+        <p>Create your RaceDay account and start your sporting journey.</p>
+        <a href="@Url.Action("Register", "Home")" class="primary-btn">
+            Join RaceDay
+        </a>
+    </div>
+
+</section>

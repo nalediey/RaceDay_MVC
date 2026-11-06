@@ -1,0 +1,314 @@
+﻿@{
+    ViewData["Title"] = "Race Results";
+}
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+<!-- Navigation -->
+@Html.Partial("_navigation")
+
+
+<div class="results-page">
+
+    <!-- Hero Section -->
+    <section class="results-hero">
+
+        <p class="section-label">CELEBRATE EVERY FINISH LINE</p>
+
+        <h1>Race <span>Results</span></h1>
+
+        <p>
+            Track race performances, celebrate achievements and discover
+            the latest results from running, walking and cycling events
+            across South Africa.
+        </p>
+
+    </section>
+
+
+    <!-- Introduction -->
+    <section class="results-intro">
+
+        <h2>Participant Results</h2>
+
+        <p>
+            Explore race performances and see how participants performed
+            on race day.
+        </p>
+
+    </section>
+
+
+    <!-- Search Section -->
+    <section class="results-search">
+
+        <input type="text"
+               id="searchResults"
+               placeholder="Search participant or event..."
+               onkeyup="searchRaceResults()" />
+
+        <select id="categoryFilter" onchange="searchRaceResults()">
+
+            <option value="">All Categories</option>
+            <option value="Running">Running</option>
+            <option value="Cycling">Cycling</option>
+            <option value="Walking">Walking</option>
+
+        </select>
+
+    </section>
+
+
+    <!-- Results Table -->
+    <section class="results-table-section">
+
+        <div class="results-heading">
+            <h2>Latest Race Performances</h2>
+
+            <span class="results-label">
+                <i class="fa-solid fa-trophy"></i>
+                RaceDay Leaderboard
+            </span>
+        </div>
+
+
+        <div class="table-responsive">
+
+            <table class="results-table" id="raceResultsTable">
+
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Participant</th>
+                        <th>Event</th>
+                        <th>Category</th>
+                        <th>Finish Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <!-- Participant 1 -->
+                    <tr>
+                        <td>
+                            <span class="position gold">1st</span>
+                        </td>
+
+                        <td>Thabo Mokoena</td>
+
+                        <td>Johannesburg City Run</td>
+
+                        <td>Running</td>
+
+                        <td>00:35:42</td>
+
+                        <td>
+                            <span class="result-status completed">
+                                Completed
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <!-- Participant 2 -->
+                    <tr>
+                        <td>
+                            <span class="position silver">2nd</span>
+                        </td>
+
+                        <td>Sarah Nkosi</td>
+
+                        <td>Johannesburg City Run</td>
+
+                        <td>Running</td>
+
+                        <td>00:38:15</td>
+
+                        <td>
+                            <span class="result-status completed">
+                                Completed
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <!-- Participant 3 -->
+                    <tr>
+                        <td>
+                            <span class="position bronze">3rd</span>
+                        </td>
+
+                        <td>David Smith</td>
+
+                        <td>Cape Town Cycling Challenge</td>
+
+                        <td>Cycling</td>
+
+                        <td>01:20:30</td>
+
+                        <td>
+                            <span class="result-status completed">
+                                Completed
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <!-- Participant 4 -->
+                    <tr>
+                        <td>
+                            <span class="position">4th</span>
+                        </td>
+
+                        <td>Nomsa Dlamini</td>
+
+                        <td>Community Charity Walk</td>
+
+                        <td>Walking</td>
+
+                        <td>00:55:20</td>
+
+                        <td>
+                            <span class="result-status completed">
+                                Completed
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <!-- Participant 5 -->
+                    <tr>
+                        <td>
+                            <span class="position">5th</span>
+                        </td>
+
+                        <td>Michael Johnson</td>
+
+                        <td>Cape Town Cycling Challenge</td>
+
+                        <td>Cycling</td>
+
+                        <td>01:35:10</td>
+
+                        <td>
+                            <span class="result-status completed">
+                                Completed
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <p id="noResults" class="no-results" style="display:none;">
+                No matching race results were found.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Achievement Section -->
+    <section class="achievement-section">
+
+        <h2>Every Finish Is an Achievement!</h2>
+
+        <p>
+            Whether you finish first or complete your very first race,
+            every step forward deserves to be celebrated.
+        </p>
+
+        <div class="achievement-container">
+
+            <div class="achievement-card">
+                <i class="fa-solid fa-medal gold-icon"></i>
+                <h3>1st Place</h3>
+                <p>Gold Achievement</p>
+            </div>
+
+            <div class="achievement-card">
+                <i class="fa-solid fa-medal silver-icon"></i>
+                <h3>2nd Place</h3>
+                <p>Silver Achievement</p>
+            </div>
+
+            <div class="achievement-card">
+                <i class="fa-solid fa-medal bronze-icon"></i>
+                <h3>3rd Place</h3>
+                <p>Bronze Achievement</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Bottom Section -->
+    <section class="results-bottom">
+
+        <i class="fa-solid fa-flag-checkered"></i>
+
+        <h2>Your Next Achievement Starts Here!</h2>
+
+        <p>
+            Find your next event, register and challenge yourself
+            to achieve something amazing.
+        </p>
+
+        <a href="@Url.Action("Events", "Home")" class="results-btn">
+            Explore Events
+        </a>
+
+    </section>
+
+</div>
+
+
+<!-- Search JavaScript -->
+<script>
+
+    function searchRaceResults() {
+
+        let input = document.getElementById("searchResults").value.toLowerCase();
+
+        let category = document.getElementById("categoryFilter").value.toLowerCase();
+
+        let table = document.getElementById("raceResultsTable");
+
+        let rows = table.getElementsByTagName("tr");
+
+        let visibleCount = 0;
+
+        for (let i = 1; i < rows.length; i++) {
+
+            let rowText = rows[i].innerText.toLowerCase();
+
+            let rowCategory = rows[i].cells[3].innerText.toLowerCase();
+
+            let matchesSearch = rowText.includes(input);
+
+            let matchesCategory = category === "" || rowCategory === category;
+
+            if (matchesSearch && matchesCategory) {
+
+                rows[i].style.display = "";
+
+                visibleCount++;
+
+            } else {
+
+                rows[i].style.display = "none";
+
+            }
+
+        }
+
+        document.getElementById("noResults").style.display =
+            visibleCount === 0 ? "block" : "none";
+
+    }
+
+</script>

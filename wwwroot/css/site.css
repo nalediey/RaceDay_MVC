@@ -1320,3 +1320,221 @@ body {
         background-color: #e65c00;
         color: white;
     }
+
+/* ================================= */
+/* LOGIN AND REGISTER PAGES */
+/* ================================= */
+
+.auth-page {
+    min-height: 90vh;
+    padding: 50px 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f6f9;
+}
+
+.auth-container {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    width: 100%;
+    max-width: 1050px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.10);
+}
+
+/* Left image section */
+
+.auth-image {
+    display: flex;
+    align-items: flex-end;
+    min-height: 570px;
+    padding: 40px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.login-image {
+    background-image: linear-gradient(rgba(16, 29, 53, 0.45), rgba(16, 29, 53, 0.85)), url('/images/running-race.jpg');
+}
+
+.register-image {
+    background-image: linear-gradient(rgba(16, 29, 53, 0.45), rgba(16, 29, 53, 0.85)), url('/images/cycling-race.jpg');
+}
+
+.auth-image-content {
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+    .auth-image-content h1 {
+        color: white;
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .auth-image-content p {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 10px;
+    }
+
+/* Right form section */
+
+.auth-form {
+    padding: 45px 40px;
+}
+
+.auth-label {
+    color: #ff7518;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.auth-form h2 {
+    color: #101d35;
+    font-size: 27px;
+    margin: 12px 0;
+}
+
+.auth-description {
+    color: #626b78;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+/* Form inputs */
+
+.auth-input-group {
+    margin-bottom: 18px;
+}
+
+    .auth-input-group label {
+        display: block;
+        color: #101d35;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 7px;
+    }
+
+    .auth-input-group input,
+    .auth-input-group select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #d5dbe5;
+        border-radius: 5px;
+        font-size: 13px;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+        background-color: white;
+    }
+
+        .auth-input-group input:focus,
+        .auth-input-group select:focus {
+            border-color: #ff7518;
+            box-shadow: 0 0 4px rgba(255, 117, 24, 0.3);
+        }
+
+/* Remember me */
+
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #626b78;
+}
+
+    .auth-options input {
+        accent-color: #ff7518;
+    }
+
+/* Submit button */
+
+.auth-submit {
+    width: 100%;
+    padding: 13px;
+    background-color: #ff7518;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .auth-submit:hover {
+        background-color: #e65c00;
+    }
+
+/* Links */
+
+.auth-switch {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 13px;
+    color: #626b78;
+}
+
+    .auth-switch a {
+        color: #ff7518;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+        .auth-switch a:hover {
+            text-decoration: underline;
+        }
+
+.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #101d35;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+    .back-home:hover {
+        color: #ff7518;
+    }
+
+/* Register layout */
+
+.register-container {
+    grid-template-columns: 0.85fr 1.4fr;
+}
+
+.register-form {
+    padding: 35px 40px;
+}
+
+.register-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 15px;
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+
+    .auth-container,
+    .register-container {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-image {
+        min-height: 250px;
+    }
+
+    .auth-form {
+        padding: 30px 22px;
+    }
+}

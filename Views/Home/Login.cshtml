@@ -1,7 +1,79 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Login";
 }
+
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
 @Html.Partial("_navigation")
+
+<div class="auth-page">
+
+    <div class="auth-container">
+
+        <div class="auth-image login-image">
+            <div class="auth-image-content">
+                <h1>WELCOME BACK!</h1>
+                <p>Your next finish line starts here.</p>
+                <p>Stay motivated, stay active and keep chasing your goals.</p>
+            </div>
+        </div>
+
+        <div class="auth-form">
+
+            <span class="auth-label">RACEDAY ACCOUNT</span>
+
+            <h2>Login to Your Account</h2>
+
+            <p class="auth-description">
+                Welcome back! Please enter your details to continue.
+            </p>
+
+            <form asp-controller="Account" asp-action="Login" method="post">
+
+                @Html.AntiForgeryToken()
+
+                <div class="auth-input-group">
+                    <label>Email Address</label>
+                    <input type="email"
+                           name="EmailAddress"
+                           placeholder="Enter your email address"
+                           required />
+                </div>
+
+                <div class="auth-input-group">
+                    <label>Password</label>
+                    <input type="password"
+                           name="Password"
+                           placeholder="Enter your password"
+                           required />
+                </div>
+
+                <div class="auth-options">
+                    <label>
+                        <input type="checkbox" name="RememberMe" value="true" />
+                        Remember me
+                    </label>
+                </div>
+
+                <button type="submit" class="auth-submit">
+                    Login to RaceDay
+                </button>
+
+            </form>
+
+            <p class="auth-switch">
+                Don't have an account?
+                <a asp-controller="Account" asp-action="Register">
+                    Register here
+                </a>
+            </p>
+
+            <a asp-controller="Home" asp-action="Index" class="back-home">
+                ← Back to Homepage
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

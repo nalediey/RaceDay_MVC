@@ -1,0 +1,73 @@
+﻿@model RaceDay_MVC.Models.CreateEventViewModel
+@{
+    ViewData["Title"] = "Create Event";
+}
+
+@Html.Partial("_dashnavs")
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+<div class="dashboard-page" style="padding: 40px 7%;">
+
+    <div style="background: white; padding: 40px; border-radius: 9px; box-shadow: 0 3px 12px rgba(0,0,0,0.06); max-width: 800px; margin: 0 auto;">
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+            <h2 style="color: #101d35; margin: 0;">Create New Event</h2>
+            <a asp-action="OrganiserDashboard" style="color: #626b78; text-decoration: none; font-size: 14px;">
+                <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert-error" style="margin-bottom: 20px;">
+                <i class="fa-solid fa-circle-exclamation"></i> @ViewBag.Error
+            </div>
+        }
+
+        <form asp-action="CreateEvent" method="post" enctype="multipart/form-data">
+
+            <div class="auth-input-group">
+                <label>Event Name</label>
+                <input asp-for="Name" placeholder="e.g. Cape Town Marathon" required />
+            </div>
+
+            <div class="auth-input-group">
+                <label>Description</label>
+                <textarea asp-for="Description" rows="3" placeholder="Describe your event..." required style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #d5dbe5; font-family: 'Poppins', sans-serif; outline: none;"></textarea>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="auth-input-group">
+                    <label>Date</label>
+                    <input asp-for="Date" type="date" required />
+                </div>
+                <div class="auth-input-group">
+                    <label>Location</label>
+                    <input asp-for="Location" placeholder="e.g. Cape Town" required />
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="auth-input-group">
+                    <label>Distance</label>
+                    <input asp-for="Distance" placeholder="e.g. 42.2km" required />
+                </div>
+                <div class="auth-input-group">
+                    <label>Event Type</label>
+                    <input asp-for="EventType" placeholder="e.g. Running, Cycling" required />
+                </div>
+            </div>
+
+            <div class="auth-input-group" style="background-color: #f4f6f9; padding: 20px; border-radius: 8px; border: 1px dashed #d5dbe5;">
+                <label style="margin-bottom: 10px;"><i class="fa-solid fa-image" style="color: #ff7518;"></i> Event Banner Image</label>
+                <input asp-for="BannerImage" type="file" accept="image/*" style="border: none; background: transparent; padding: 0;" />
+                <p style="color: #626b78; font-size: 12px; margin-top: 10px; margin-bottom: 0;">Upload a high-quality image to display on the event card. (JPG, PNG)</p>
+            </div>
+
+            <button type="submit" class="primary-btn" style="width: 100%; margin-top: 20px; padding: 15px; font-size: 16px;">
+                <i class="fa-solid fa-plus"></i> Create Event
+            </button>
+
+        </form>
+    </div>
+</div>

@@ -1,133 +1,77 @@
 ﻿@{
     ViewData["Title"] = "Register";
 }
+@model RaceDay_MVC.Models.RegisterDto
 
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-
 @Html.Partial("_navigation")
 
 <div class="auth-page">
-
     <div class="auth-container register-container">
-
         <div class="auth-image register-image">
             <div class="auth-image-content">
                 <h1>JOIN RACEDAY!</h1>
                 <p>Be part of South Africa's active community.</p>
-                <p>Discover events, challenge yourself and celebrate every achievement.</p>
             </div>
         </div>
 
         <div class="auth-form register-form">
-
             <span class="auth-label">CREATE YOUR ACCOUNT</span>
-
             <h2>Register with RaceDay</h2>
 
-            <p class="auth-description">
-                Join our community and start your racing journey.
-            </p>
-
-            <form asp-controller="Account" asp-action="Register" method="post">
-
+            <form asp-controller="Home" asp-action="Register" method="post">
                 @Html.AntiForgeryToken()
 
                 <div class="register-inputs">
-
                     <div class="auth-input-group">
                         <label>First Name</label>
-                        <input type="text" name="FirstName"
-                               placeholder="Enter first name" required />
+                        <input type="text" name="first_name" placeholder="Enter first name" required />
                     </div>
 
                     <div class="auth-input-group">
                         <label>Last Name</label>
-                        <input type="text" name="LastName"
-                               placeholder="Enter last name" required />
+                        <input type="text" name="last_name" placeholder="Enter last name" required />
                     </div>
 
                     <div class="auth-input-group">
                         <label>Email Address</label>
-                        <input type="email" name="EmailAddress"
-                               placeholder="Enter email address" required />
+                        <input type="email" name="Email" placeholder="Enter email address" required />
                     </div>
 
                     <div class="auth-input-group">
                         <label>Phone Number</label>
-                        <input type="tel" name="PhoneNumber"
-                               placeholder="e.g. 0712345678" required />
+                        <input type="tel" name="PhoneNUmber" placeholder="e.g. 0712345678" required />
                     </div>
 
                     <div class="auth-input-group">
                         <label>Password</label>
-                        <input type="password" name="Password"
-                               placeholder="Create a password" required />
+                        <input type="password" name="Password" placeholder="Create a password" required />
                     </div>
 
                     <div class="auth-input-group">
                         <label>Confirm Password</label>
-                        <input type="password" name="ConfirmPassword"
-                               placeholder="Confirm your password" required />
+                        <!-- Note the spelling to match your API -->
+                        <input type="password" name="Comfirmpassword" placeholder="Confirm your password" required />
                     </div>
 
                     <div class="auth-input-group">
                         <label>Account Type</label>
-                        <select name="AccountType" required>
+                        <!-- Must match exactly "Organiser" or "Participant" -->
+                        <select name="role" required>
                             <option value="">Select account type</option>
                             <option value="Participant">Participant</option>
-                            <option value="Event Organiser">Event Organiser</option>
+                            <option value="Organiser">Event Organiser</option>
                         </select>
                     </div>
-
-                    <div class="auth-input-group">
-                        <label>Province</label>
-                        <select name="Province" required>
-                            <option value="">Select province</option>
-                            <option>Eastern Cape</option>
-                            <option>Free State</option>
-                            <option>Gauteng</option>
-                            <option>KwaZulu-Natal</option>
-                            <option>Limpopo</option>
-                            <option>Mpumalanga</option>
-                            <option>Northern Cape</option>
-                            <option>North West</option>
-                            <option>Western Cape</option>
-                        </select>
-                    </div>
-
-                    <div class="auth-input-group">
-                        <label>City</label>
-                        <input type="text" name="City"
-                               placeholder="Enter your city" required />
-                    </div>
-
-                    <div class="auth-input-group">
-                        <label>Suburb</label>
-                        <input type="text" name="Suburb"
-                               placeholder="Enter your suburb" required />
-                    </div>
-
                 </div>
 
-                <button type="submit" class="auth-submit">
-                    Create My Account
-                </button>
-
+                <button type="submit" class="auth-submit">Create My Account</button>
             </form>
 
             <p class="auth-switch">
                 Already have an account?
-                <a asp-controller="Account" asp-action="Login">
-                    Login here
-                </a>
+                <a asp-controller="Home" asp-action="Login">Login here</a>
             </p>
-
-            <a asp-controller="Home" asp-action="Index" class="back-home">
-                ← Back to Homepage
-            </a>
-
         </div>
-
     </div>
-
 </div>

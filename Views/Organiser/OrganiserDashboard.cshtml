@@ -1,0 +1,101 @@
+﻿@model List<RaceDay_MVC.Models.EventDto>
+
+@{
+    ViewData["Title"] = "Organiser Dashboard";
+}
+@Html.Partial("_dashnavs")
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+
+
+<div class="dashboard-page">
+
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+        <div class="dashboard-header-content">
+            <h1>Organiser <span>Dashboard</span></h1>
+            <p>Manage your events, track enrolments, and view your upcoming races.</p>
+        </div>
+        <a asp-action="CreateEvent" class="primary-btn">
+            <i class="fa-solid fa-plus"></i> Create New Event
+        </a>
+    </div>
+
+    <div class="dashboard-container">
+
+        <!-- Summary Cards -->
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+                <div class="stat-info">
+                    <h2>@(Model?.Count ?? 0)</h2>
+                    <p>Total Events</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-info">
+                    <h2>0</h2> <!-- We will wire this up later -->
+                    <p>Total Enrolments</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-regular fa-calendar-days"></i></div>
+                <div class="stat-info">
+                    <h2>@(Model?.Count(e => e.Date > DateTime.Now) ?? 0)</h2>
+                    <p>Upcoming Events</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="dashboard-events-section">
+            <h2 class="section-title">Your Events</h2>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert-error">
+                    <i class="fa-solid fa-circle-exclamation"></i> @ViewBag.Error
+                </div>
+            }
+
+            @if (Model == null || !Model.Any())
+            {
+                <div class="no-events">
+                    <i class="fa-regular fa-folder-open" style="font-size: 40px; color: #d5dbe5; margin-bottom: 15px;"></i>
+                    <p>You haven't created any events yet.</p>
+                    <a asp-action="CreateEvent" class="primary-btn">Create Your First Event</a>
+                </div>
+            }
+            else
+            {
+                <div class="dashboard-events-grid">
+                    @foreach (var ev in Model)
+                    {
+                        <div class="dash-event-card">
+                            <!-- Using a placeholder color block since we don't have images yet -->
+                            <div class="dash-event-image-placeholder">
+                                <span>@ev.EventType</span>
+                            </div>
+
+                            <div class="dash-event-content">
+                                <div class="dash-event-header">
+                                    <span class="event-category running">@ev.EventType</span>
+                                    <span class="event-date"><i class="fa-regular fa-calendar"></i> @ev.Date.ToString("dd MMM yyyy")</span>
+                                </div>
+                                <h3>@ev.Name</h3>
+                                <p class="event-location"><i class="fa-solid fa-location-dot"></i> @ev.Location</p>
+                                <p class="event-desc">@ev.Description</p>
+
+                                <div class="dash-event-footer">
+                                    <a href="#" class="secondary-btn btn-sm">Manage Categories</a>
+                                    <a href="#" class="secondary-btn btn-sm">View Enrolments</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>

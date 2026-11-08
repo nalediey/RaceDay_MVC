@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "RaceDay";
+}
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<nav class="navigation">
+    <a href="@Url.Action("Index", "Home")" class="logo">
+        <i class="fa-solid fa-flag-checkered"></i>
+        RaceDay
+    </a>
+
+    <div class="nav-links">
+        <!-- We can add dashboard links here later if needed -->
+    </div>
+
+    <div class="nav-buttons" style="display: flex; align-items: center; gap: 15px;">
+        <!-- Show the role from the cookie -->
+        @if (Context.Request.Cookies["UserRole"] != null)
+        {
+            <span style="color: white; font-size: 14px; font-weight: 500;">
+                <i class="fa-solid fa-user-circle"></i> @Context.Request.Cookies["UserRole"]
+            </span>
+        }
+
+        <!-- Logout Button -->
+        <a href="@Url.Action("Logout", "Home")" class="register-btn" style="padding: 8px 15px;">
+            <i class="fa-solid fa-right-from-bracket"></i> Log Out
+        </a>
+    </div>
+</nav>

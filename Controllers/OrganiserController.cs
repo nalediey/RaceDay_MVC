@@ -4,7 +4,7 @@ namespace RaceDay_MVC.Controllers
 {
     public class OrganiserController : Controller
     {
-        public IActionResult Index()
+        public IActionResult OrganiserDashboard()
         {
             return View();
         }

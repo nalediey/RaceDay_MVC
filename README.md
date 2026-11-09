@@ -11,52 +11,34 @@ RaceDay MVC is the ASP.NET Core MVC web application for the RaceDay event platfo
 - Create events with details and an optional banner image.
 - Browse participant pages for events, enrolments, results, and profile information.
 
-> Some participant and event pages may currently be UI scaffolding; availability depends on the API and implementation state.
-
 ## Technology
 
 - .NET 8 / ASP.NET Core MVC
 - C# and Razor views
 - HTML, CSS, and JavaScript
-- A separate RaceDay API project (referenced by the solution)
+- A separate RaceDay API project
 
-## Prerequisites
-
-- .NET 8 SDK
-- The RaceDay API project and its own prerequisites, running locally and reachable at `https://localhost:7258/` (the current URL configured by the MVC app)
-
-## Run locally
-
-The solution references the API project at `..\RaceDay_api\RaceDay_api.csproj`, so arrange the MVC and API projects as sibling directories, or update the project reference if your checkout uses a different layout.
-
-1. Start the RaceDay API and ensure its HTTPS endpoint is `https://localhost:7258/`.
-2. From this repository's directory, run the MVC application:
-
-   ```bash
-   dotnet run --project RaceDay_MVC.csproj
-   ```
-
-3. Open the local URL printed by `dotnet run` in your browser.
-
-Alternatively, open `RaceDay_MVC.sln` in Visual Studio, set `RaceDay_MVC` as the startup project, and run it while the API is available.
-
-## Configuration
-
-The named `RaceDayApi` HTTP client is configured in `Program.cs`. If the API uses a different URL, update its `BaseAddress` there. The current development setup bypasses TLS certificate validation for the API client; use a trusted development certificate locally and remove that bypass before deploying or using this configuration outside a controlled development environment.
-
-General ASP.NET Core settings, including logging and allowed hosts, are in `appsettings.json`.
+## Colors used 
+- Navy Blue, White, Orange, black these are race colors they bring out the boldness of the raceday theme.  
 
 ## Project layout
 
-```text
 Controllers/   MVC controllers and API-facing actions
 Models/        View models and API data-transfer models
 Services/      Shared HTTP client support, including JWT forwarding
 Views/         Razor views
-wwwroot/       Static assets (CSS, JavaScript, images)
-Program.cs     Application and dependency-injection setup
-```
 
-## Notes
+## Screenshots 
+<img width="1904" height="1010" alt="Screenshot 2026-11-09 125916" src="https://github.com/user-attachments/assets/aef628da-660f-4d81-99c8-983698a0ffcf" /> The Homepage screenshot showing how the home page looks like.
+<img width="1904" height="1009" alt="Screenshot 2026-11-09 125933" src="https://github.com/user-attachments/assets/6b1be70c-dc6a-4706-ad6c-864f1f3c0213" /> The AboutUs page screenshot showing how he about us page looks like. 
+<img width="1906" height="1012" alt="Screenshot 2026-11-09 125948" src="https://github.com/user-attachments/assets/1e5ccc6d-a601-4bb5-96bd-5df115e38ba3" /> This is the events page it shows all the events avaliable and how the event page looks like.
+<img width="1907" height="1003" alt="Screenshot 2026-11-09 130004" src="https://github.com/user-attachments/assets/8463ee7c-94ee-4188-ae3b-303d501a34f4" /> This is the Race Calender page it shows the dates and the times the races are going to take place and this is how it looks like.
+<img width="1909" height="1117" alt="Screenshot 2026-11-09 130022" src="https://github.com/user-attachments/assets/82afeb4e-433c-470d-9da1-3e122302c6e0" /> This is the Results page , it shows the rseults of the race, the positions people came in and if they have completed the race, this is how the page looks like.
+<img width="1912" height="1119" alt="Screenshot 2026-11-09 130048" src="https://github.com/user-attachments/assets/edecdf6f-12e4-480d-bc56-777e6a57464f" /> This is the contact us page it shows the information needed to contact and a form the user can fill in to send a message and this is how the page looks like. 
 
-This repository contains the MVC front end. API-backed features require the separate RaceDay API to be running and configured as described above.
+
+
+
+
+
+
